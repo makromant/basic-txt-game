@@ -14,10 +14,10 @@ using namespace std;
 
 string find(char ch1, char ch2, char ch3) {
     setlocale(LC_ALL, "Russian");
-    ifstream txt ("/Users/makromant/Documents/cpp/txt_game(test)/txt/text.txt");
+    ifstream txt ("/txt/text.txt");
     //измените на свою директорию
     char str;
-    int stop=0;
+    bool stop=false;
     string all_string="";
     while(!txt.eof())
     {
@@ -34,7 +34,7 @@ string find(char ch1, char ch2, char ch3) {
                 txt.get(str);
                 if (str == ch3)
                 {
-                    stop=1;
+                    stop=true;
                     break;
                 }
 
@@ -43,7 +43,7 @@ string find(char ch1, char ch2, char ch3) {
         }
 
     }
-    if (stop==1)
+    if (stop)
     {
     while(!txt.eof())
     {
